@@ -1,5 +1,9 @@
+#include "type.h"
+#include "utility.h"
+
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 static void check_args(int argc, char *argv[]) /* TODO: add number check*/
 {
@@ -8,25 +12,27 @@ static void check_args(int argc, char *argv[]) /* TODO: add number check*/
 				char *cmd = argv[3];
 				if (strcmp(cmd, "cmd_1") &&
 								strcmp(cmd, "cmd_2"))
-								printf("unknown command `%s'\n", cmd);
+								error("unknown command `%s'\n", cmd);
 }
 
-static void execte_cmd_1(const char *number, const char *character)
+static int execte_cmd_1(const char *number, const char *character)
 {
 				u16 n;
-				n = (u16)strtoul(number);
+				n = (u16)strtoul(number, NULL, 10);
 				printf("function: %s, arg number: %hu", __func__, n);
 				const char *a = character;
 				printf("function: %s, arg character: %s", __func__, a);
+				return 0;
 }
 
-static void execte_cmd_1(const char *number, const char *character)
+static int execte_cmd_2(const char *number, const char *character)
 {
 				u16 n;
-				n = (u16)strtoul(number);
+				n = (u16)strtoul(number, NULL, 10);
 				printf("function: %s, arg number: %hu", __func__, n);
 				const char *a = character;
 				printf("function: %s, arg character: %s", __func__, a);
+				return 0;
 }
 
 int main(int argc, char *argv[])
@@ -40,4 +46,6 @@ int main(int argc, char *argv[])
 								return execte_cmd_1(argv_1, argv_2);
 				else if (!strcmp(command, "cmd_2"))
 								return execte_cmd_2(argv_1, argv_2);
+				else
+								return -1;
 }
