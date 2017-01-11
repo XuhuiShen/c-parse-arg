@@ -5,7 +5,7 @@ OBJ += $(SRC:.c=.o)
 CFLAGS += -O2 -Wall -g -c
 LDFLAGS +=
 CPPFLAGS += -I$(INCLDIRS)
-OUTPUT = $(shell pwd)/readarg.out
+OUTPUT = $(shell pwd)/pare-arg.out
 
 $(OUTPUT): $(OBJ)
 	$(CC) $(LDFLAGS) -o $@ $(OBJ)

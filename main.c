@@ -19,9 +19,9 @@ static int execte_cmd_1(const char *number, const char *character)
 {
 				u16 n;
 				n = (u16)strtoul(number, NULL, 10);
-				printf("function: %s, arg number: %hu", __func__, n);
+				printf("function: %s, arg number: %hu\n", __func__, n);
 				const char *a = character;
-				printf("function: %s, arg character: %s", __func__, a);
+				printf("function: %s, arg character: %s\n", __func__, a);
 				return 0;
 }
 
@@ -29,9 +29,9 @@ static int execte_cmd_2(const char *number, const char *character)
 {
 				u16 n;
 				n = (u16)strtoul(number, NULL, 10);
-				printf("function: %s, arg number: %hu", __func__, n);
+				printf("function: %s, arg number: %hu\n", __func__, n);
 				const char *a = character;
-				printf("function: %s, arg character: %s", __func__, a);
+				printf("function: %s, arg character: %s\n", __func__, a);
 				return 0;
 }
 
